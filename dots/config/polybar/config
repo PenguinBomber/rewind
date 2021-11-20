@@ -1,0 +1,142 @@
+;; Base Config
+;; Bryce Schuman
+
+[color]
+
+bar = #14141400
+
+bg-dark = #141414
+
+accent-red = #f9140f
+
+accent-green = #45ad2d
+accent-yellow = #d6ff09
+
+accent-purple = #5c2489
+accent-blue = #4c63a7
+accent-pink = #ed76b0
+
+[bar/base]
+border-bottom-size = 0
+
+line-size = 3
+width = 100%
+height = 30
+
+bottom=false
+
+background = ${color.bar}
+
+font-0 = "Literation Mono Nerd Font:pixelsize=10;2"
+
+[bar/main]
+inherit = bar/base
+
+modules-left = date alsa wired-network workspaces
+
+radius = 0
+
+; --MODULES--
+
+[module/date]
+type = internal/date
+interval = 1.0
+
+time = %I:%M %p
+
+format = <label>
+format-background = ${color.bg-dark}
+format-padding = 1
+format-offset = -3
+label = %time%
+format-underline = ${color.accent-yellow}
+
+[module/alsa]
+type = internal/alsa
+format-volume = <label-volume>
+format-muted = <label-muted>
+
+master-mixer = PCM
+
+format-volume-background = ${color.bg-dark}
+format-muted-background = ${color.bg-dark}
+
+label-volume = 墳 %percentage%%
+label-muted = 婢 Muted
+
+label-volume-padding = 1
+label-muted-padding = 1
+
+format-volume-underline = ${color.accent-green}
+format-muted-underline = ${color.accent-red}
+
+
+[module/battery]
+type = internal/battery
+
+format-charging = <label-charging>
+
+full-at = 100
+battery = BAT1
+adapter = ADP1
+poll-interval = 1
+
+label-full =  100%
+label-charging =  %percentage%%
+label-discharging =  %percentage%%
+
+label-full-padding = 1
+label-charging-padding = 1
+label-discharging-padding = 1
+
+format-charging-background = ${color.bg}
+format-discharging-background = ${color.bg}
+
+[module/wired-network]
+type = internal/network
+interface = eth0
+
+label-connected = ""
+label-disconnected = ""
+label-packetloss = ""
+
+label-connected-padding = 1
+label-disconnected-padding = 1
+label-packetloss-padding = 1
+
+format = <label>
+format-connected-background = ${color.bg-dark}
+format-disconnected-background = ${color.bg-dark}
+format-packetloss-background = ${color.bg-dark}
+
+format-connected-underline = ${color.accent-pink}
+format-disconnected-underline = ${color.accent-red}
+format-packetloss-underline = ${color.accent-yellow}
+
+[module/workspaces]
+type = internal/xworkspaces
+
+format = <label-state>
+format-padding = 0
+
+label-active-background = ${color.bg-dark}
+label-empty-background  = ${color.bg-dark}
+label-occupied-background = ${color.bg-dark}
+
+label-active-padding = 1
+label-empty-padding = 1
+label-occupied-padding = 1
+
+label-active-padding-left = 0.5
+label-empty-padding-left = 0.5
+label-occupied-padding-left = 0.5
+
+label-active-underline = ${color.accent-purple}
+label-empty-underline = ${color.accent-blue}
+label-occupied-underline = ${color.accent-blue}
+
+
+[settings]
+pseudo-transparency = false
+override-redirect = true
+wm-restack = bspwm

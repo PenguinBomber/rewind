@@ -1,0 +1,36 @@
+[colors]
+background = rgba(20, 20, 20, 1)
+
+# Black, Gray, Silver, White
+color0  = #1b1b1b
+color8  = #3b3b3b
+color7  = #e0e0e0
+color15 = #fefefe
+
+# Red
+color1  = #f9140f
+color9  = #f9140f
+
+# Green
+color2  = #45ad2d
+color10 = #45ad2d
+
+# Yellow
+color3  = #d6ff09
+color11 = #d6ff09
+
+# Blue
+color4  = #4c63a7
+color12 = #4c63a7
+
+# Purple
+color5  = #5c2489
+color13 = #5c2489
+
+# Teal
+color6  = #ed76b0
+color14 = #ed76b0
+
+[options]
+font = Literation Mono Nerd Font 10
+

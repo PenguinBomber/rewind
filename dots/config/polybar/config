@@ -20,8 +20,11 @@ accent-pink = #ed76b0
 border-bottom-size = 0
 
 line-size = 3
-width = 100%
+width = 100%-10px
 height = 30
+
+offset-y = 10
+offset-x = 10
 
 bottom=false
 
@@ -50,6 +53,7 @@ format-padding = 1
 format-offset = -3
 label = %time%
 format-underline = ${color.accent-yellow}
+format-overline = ${color.accent-yellow}
 
 [module/alsa]
 type = internal/alsa
@@ -70,6 +74,8 @@ label-muted-padding = 1
 format-volume-underline = ${color.accent-green}
 format-muted-underline = ${color.accent-red}
 
+format-volume-overline = ${color.accent-green}
+format-muted-overline = ${color.accent-red}
 
 [module/battery]
 type = internal/battery
@@ -113,6 +119,10 @@ format-connected-underline = ${color.accent-pink}
 format-disconnected-underline = ${color.accent-red}
 format-packetloss-underline = ${color.accent-yellow}
 
+format-connected-overline = ${color.accent-pink}
+format-disconnected-overline = ${color.accent-red}
+format-packetloss-overline = ${color.accent-yellow}
+
 [module/workspaces]
 type = internal/xworkspaces
 
@@ -134,6 +144,10 @@ label-occupied-padding-left = 0.5
 label-active-underline = ${color.accent-purple}
 label-empty-underline = ${color.accent-blue}
 label-occupied-underline = ${color.accent-blue}
+
+label-active-overline = ${color.accent-purple}
+label-empty-overline = ${color.accent-blue}
+label-occupied-overline = ${color.accent-blue}
 
 
 [settings]
